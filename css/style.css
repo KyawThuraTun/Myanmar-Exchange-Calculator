@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+:root {
+    --primary: #2CD1EE;
+    --secondary: #707070;
+    --secondary-soft: #f2f2f2;
+    --primary-soft: #2CD1EE60;
+    --light: #fff;
+    --dark: #3a3b3c;
+    --border-radius: 5px;
+}
+
+@font-face {
+    font-family: 'mm';
+    font-weight: normal;
+    src: url("../fonts/MyanmarSagar.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', 'sans-serif', 'mm';
+    color: var(--secondary);
+}
+
+body {
+    transition: 0.5s;
+}
+
+.app {
+    width: 700px;
+    margin: 100px auto;
+}
+
+.output {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+}
+
+.brand-text {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.result-container {}
+
+.result {
+    font-size: 50px;
+}
+
+.divider {
+    height: 5px;
+    background: var(--secondary);
+    border-radius: var(--border-radius);
+}
+
+.calc {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.container {
+    width: 150px;
+}
+
+.container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input,
+.from,
+.to {
+    width: 100%;
+    height: 35px;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--secondary);
+}
+
+.input {
+    text-align: right;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.calc-btn {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary);
+    color: var(--light);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.calc-btn:active {
+    background-color: var(--primary-soft);
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+@-moz-document url-prefix() {
+    select {
+        width: 110%;
+        background-position: right 30px center !important;
+        border: none !important;
+    }
+}
+
+select:focus,
+input:focus,
+button:focus {
+    outline: none;
+}
+
+
+/* table */
+
+.history {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* border-collapse: collapse; */
+    width: 100%;
+}
+
+.history td,
+.history th {
+    padding: 8px;
+    border-radius: var(--border-radius);
+}
+
+.history th:last-child {
+    text-align: right;
+}
+
+.history tr td:last-child {
+    text-align: right;
+}
+
+.history tr:hover {
+    background-color: #ddd;
+}
+
+.history th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.history tr {
+    background-color: var(--secondary-soft);
+}
+
+#rowSpacer td {
+    text-align: center !important;
+}
+
+.history-container {
+    position: relative;
+}
+
+.clearHistory-container {
+    position: absolute;
+    right: 0;
+}
+
+#clearHistory {
+    margin-top: 15px;
+}
+
+.clear-btn {
+    padding: 5px 10px;
+}
+
+.mode-change {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--dark);
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+.mode-change .fas {
+    color: var(--light);
+}
+
+@media screen and (max-width:480px) {
+    .app {
+        width: 96%;
+        margin: 30px auto;
+    }
+    .output {
+        flex-flow: column;
+        align-items: flex-end;
+    }
+    .brand-container {
+        width: 100%;
+    }
+    .calc {
+        flex-wrap: wrap;
+    }
+    .container {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .from-container,
+    .to-container {
+        width: 45%;
+    }
+    .input,
+    .from,
+    .to {
+        height: 50px;
+        padding: 15px 10px;
+    }
+    .calc-btn {
+        padding: 15px 0;
+    }
+}
